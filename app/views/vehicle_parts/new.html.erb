@@ -1,0 +1,58 @@
+<div class="container">
+  <h1 class="h1">車両情報登録機能</h1>
+  <br><br>
+  <div class="row">
+    <div class="col-xs-4 col-xs-offset-1">
+      <form action="search" method="GET">
+        <div class="form-group">
+          <label>車両名</label>
+          <input type="text" name="vehicle" class="form-control" value="<%= @vehicle_name %>" />
+        </div>
+        <div class="form-group">
+          <label>作業種別</label>
+          <select class="form-control" name="workType">
+						<option value="">種別を選択してください</option>
+						<option value="1">点検</option>
+						<option value="2">取付</option>
+          </select>
+        </div>
+				<table class="table">
+					<thead>
+						<th>部品名</th>
+						<th>カテゴリ</th>
+						<th>価格</th>
+						<th>取付位置</th>
+						<th>メモ</th>
+					</thaed>
+					<tbody>
+						<td><input type="text" name="partsName_1"></td>
+						<td>
+							<select name="category_1">
+								<option value="">カテゴリを選択してください</option>
+								<option value="1">タイヤ・ホイール</option>
+								<option value="2">エクステリア</option>
+								<option value="3">インテリア</option>
+								<option value="4">エンジン系</option>
+							</select>
+						</td>
+						<td><input type="number" name="price_1"></td>
+						<td><input type="text" name="position_1"></td>
+						<td><input type="text" name="memo_1"></td>
+					</tbody>
+				</table>
+
+        <br>
+        <button class="btn btn-primary btn-block" type="submit">
+          登録
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+$(function(){
+  clearActive();
+  setActive("menuAddVehiclerParts");
+});
+</script>
